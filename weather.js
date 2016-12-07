@@ -1,9 +1,28 @@
 $(document).ready(function() {
+    var city;
+	var country;
+	var $main = $('#main');
+
+    $.ajax({
+		url: "http://ip-api.com/json",
+		dataType: 'json',
+		method: 'GET',
+	}).done(function(data){
+		city = data.city;
+		country = data.countryCode;
+	});
+var url = "http://api.openweathermap.org/data/2.5/weather?q="+city+country+"&appid=072a42af4eb157714427a895c8f71581&units=imperial"
+
 	$.ajax({
-		url: "http://api.openweathermap.org/data/2.5/weather?zip=94040,us&appid=b1b15e88fa797225412429c1c50c122a1",
+		url: url,
 		dataType: 'jsonp',
 		method: 'GET',
 	}).done(function(data) {
 		console.log(data);
+		console.log(data.main.temp)
+		$main.append("Temp " + data.main.temp + "<br>");
+		$main.append("Wind " +data.wind.speed + "<br>");
+		$main.append("Clouds " +data.clouds.all);
 	});
+
 });
