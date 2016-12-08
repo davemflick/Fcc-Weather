@@ -4,14 +4,14 @@ $(document).ready(function() {
 	var $main = $('#main');
 
   $.ajax({
-  	url: "https://crossorigin.me/https://ip-api.com/json",
+  	url: "https://crossorigin.me/http://ip-api.com/json",
   	dataType: 'json',
   	method: 'GET',
 	}).done(function(loc) {
     var city = loc.city;
     var data = loc.countryCode;
-    var url = "//api.openweathermap.org/data/2.5/weather?q=" + city + country + "&appid=072a42af4eb157714427a895c8f71581&units=imperial";
-    var forcastUrl = "//api.openweathermap.org/data/2.5/forecast?q=" + city + country + "&appid=072a42af4eb157714427a895c8f71581&units=imperial";
+    var url = "https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?q=" + city + country + "&appid=072a42af4eb157714427a895c8f71581&units=imperial";
+    var forcastUrl = "https://crossorigin.me/http://api.openweathermap.org/data/2.5/forecast?q=" + city + country + "&appid=072a42af4eb157714427a895c8f71581&units=imperial";
 
    $.ajax({
      url: url,
