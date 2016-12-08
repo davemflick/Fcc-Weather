@@ -4,7 +4,7 @@ $(document).ready(function() {
 	var $main = $('#main');
 
   $.ajax({
-  	url: "https://ip-api.com/json",
+  	url: "http://ip-api.com/json",
   	dataType: 'json',
   	method: 'GET',
 	}).done(function(loc) {
