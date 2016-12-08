@@ -4,7 +4,7 @@ $(document).ready(function() {
 	var $main = $('#main');
 
   $.ajax({
-  	url: "//ip-api.com/json",
+  	url: "https://crossorigin.me/https://ip-api.com/json",
   	dataType: 'json',
   	method: 'GET',
 	}).done(function(loc) {
