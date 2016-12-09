@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  
+
 
 
   var city;
@@ -29,11 +29,11 @@ $(document).ready(function() {
    }).done(function(data) {
      $main.append("<h3>Today</h3>");
      $main.append("Weather: " + data.weather[0].main + "<br>")
-     $main.append("Temp: " + data.main.temp + "<br>");
-     $main.append("Humidity: " + data.main.humidity + "<br>");
-     $main.append("Wind: " + data.wind.speed + "<br>");
+     $main.append("Temp: " + data.main.temp.toFixed(1) + "&deg; F<br>");
+     $main.append("Humidity: " + data.main.humidity + "%<br>");
+     $main.append("Wind: " + data.wind.speed + " MPH<br>");
      $main.append("Clouds: " + data.clouds.all + "<br>");
-   
+
    });
 
    $.ajax({
@@ -47,9 +47,9 @@ $(document).ready(function() {
         //console.log(data.list[i]);
         $main.append("<h3>" + data.list[i].dt_txt.substring(5, 10) + "</h3>");
         $main.append("Weather: " + data.list[i].weather[0].main + "<br>");
-        $main.append("Temp: " + data.list[i].main.temp + "<br>");
-        $main.append("Humidity: " + data.list[i].main.humidity + "<br>");
-        $main.append("Wind: " + data.list[i].wind.speed + "<br>");
+        $main.append("Temp: " + data.list[i].main.temp.toFixed(1) + "&deg; F<br>");
+        $main.append("Humidity: " + data.list[i].main.humidity + "%<br>");
+        $main.append("Wind: " + data.list[i].wind.speed + " MPH<br>");
         $main.append("Clouds: " + data.list[i].clouds.all + "<br>");
       }
 
@@ -58,29 +58,3 @@ $(document).ready(function() {
     });
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
