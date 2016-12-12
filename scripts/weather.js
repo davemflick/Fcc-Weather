@@ -39,8 +39,7 @@ $(document).ready(function() {
        $main.append("Humidity: " + data.main.humidity + "%<br>");
        $main.append("Wind: " + data.wind.speed + " " + speedAbbr + "<br>");
        $main.append("Clouds: " + data.clouds.all + "<br>");
-     });
-
+     
      // forcast
      $.ajax({
         url: forcastUrl,
@@ -55,7 +54,10 @@ $(document).ready(function() {
           $main.append("Wind: " + data.list[i].wind.speed + " " + speedAbbr + "<br>");
           $main.append("Clouds: " + data.list[i].clouds.all + "<br>");
         }
+      });
         // background image
+        
+
         $.getJSON(url, function(data) {
           var weatherId = data.weather[0].id;
           var imgUrl = {
@@ -121,6 +123,6 @@ $(document).ready(function() {
     units == "metric" ? units = "imperial" : units = "metric";
     loadWeather();
   });
- 
+
 
 });
