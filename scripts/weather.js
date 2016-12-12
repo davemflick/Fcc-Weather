@@ -59,15 +59,15 @@ $(document).ready(function() {
         $.getJSON(url, function(data) {
           var weatherId = data.weather[0].id;
           var imgUrl = {
-          // clear:"url(http://leverhawk.com/wp-content/uploads/2013/09/iStock_000012580113Medium.jpg)",
-          // rain:"url(http://www.savetherain.org/fp/users/1/pages/1/save-the-rain_bg-001.jpg)",
-          // thunderstorm:"url(http://martinschmaltz.com/wp-content/uploads/thunderstorm.jpg)",
-          // atmosphere:"url(http://all4desktop.com/data_images/original/4248124-fog.jpg)",
-          // drizzle:"url(http://4.bp.blogspot.com/-my7Ku-_3ZXA/VAYu7mQue-I/AAAAAAAAChQ/Q48yH0L6OZU/s1600/Rain.JPG)",
-          // snow:"url(http://cdn.paper4pc.com/images/nature-landscapes-trees-forest-winter-snow-seasons-snowing-snowfall-flakes-blizzard-storm-white-wallpaper-1.jpg)",
-          // clouds:"url(http://cdn01.pelfusion.com/wp-content/uploads/2009/07/treeinclouds.jpg)",
-          // extreme:"url(http://kidsahead.com/system/ka_heros/6/original/Hurricane%20Hero%20Image_Wikimedia.png?1327958517)",
-          // additional:"url(http://www.nbc.com/sites/nbcunbc/files/files/images/2015/4/25/150423_2861308_El_Nino.jpg)",
+          clear:"url(http://i.imgur.com/93py8g1.jpg)",
+          rain:"url(http://i.imgur.com/VbPJhx7.jpg)",
+          thunderstorm:"url(http://i.imgur.com/eutmkWK.jpg?1)",
+          atmosphere:"url(http://i.imgur.com/gUG3cHy.jpg)",
+          drizzle:"url(http://i.imgur.com/6JVtdbq.jpg)",
+          snow:"url(http://i.imgur.com/xXVZtwU.jpg)",
+          clouds:"url(http://i.imgur.com/QmcfvfD.jpg)",
+          extreme:"url(http://i.imgur.com/4SURY5V.png)",
+          additional:"url(http://i.imgur.com/l7dkX2p.jpg?1)",
           }
           var backgroundImg = "";
           function selectImg(weatherId){
@@ -79,16 +79,37 @@ $(document).ready(function() {
             else if(weatherId >= 801 && weatherId <= 804) backgroundImg = imgUrl.clouds;
             else if(weatherId >= 900 && weatherId <= 906) backgroundImg = imgUrl.extreme;
             else if(weatherId >= 951 && weatherId <= 962) backgroundImg = imgUrl.additional;
-            else backgroundImg = '';
+             else backgroundImg = '';
           }
           selectImg(weatherId);
           var cssProp = "background";
           var cssValue = backgroundImg + "no-repeat fixed";
           $("html").css(cssProp, cssValue);
           $("html").css("background-size", "cover");
+          
+
+          //text color dependent on background
+          
+        var white = {"color": "white", "text-shadow":"3px 3px black"};
+        var red = {"color": "red", "text-shadow":"3px 3px white"};
+        var black = {"color": "#black", "text-shadow":"3px 3px #ddd"};
+        var $title = $('#title').css({'color': 'white', 'text-shadow': '3px 3px red'});
+
+          if(backgroundImg === imgUrl.thunderstorm) $main.css(white) && $title;
+          else if(backgroundImg === imgUrl.drizzle) $main.css(white) && $title;
+          else if(backgroundImg === imgUrl.snow) $main.css(red) && $title;
+          else if(backgroundImg === imgUrl.atmosphere) $main.css(white) && $title;
+          else if(backgroundImg === imgUrl.clouds) $main.css(white) && $title;
+          else if(backgroundImg === imgUrl.extreme) $main.css(black) && $title;
+          else if(backgroundImg === imgUrl.additional) $main.css(white) && $title;
+          else if(backgroundImg === imgUrl.clear) $main.css(red) && $title;
+
+
+          //Icon code
           var iconUrl = "http://openweathermap.org/img/w/";
           var iconImg = iconUrl + data.weather[0].icon + '.png';
           $("img").attr("src", iconImg);
+
         });
       });
     });
@@ -100,5 +121,6 @@ $(document).ready(function() {
     units == "metric" ? units = "imperial" : units = "metric";
     loadWeather();
   });
+ 
 
 });

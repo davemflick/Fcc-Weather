@@ -3,8 +3,22 @@ html {
 	height: 100%;
 	width: 100%;
 	background-size: cover;
+
 }
 
 body {
   font-size: 16px;
+  font-family: 'Righteous', cursive;
+  text-align: center;
+}
+
+h1{
+	font-family: 'Chewy', cursive;
+}
+#units{
+ background: rgba(256,256,256, .3);
+}
+
+footer {
+font-size: 12px;
 }

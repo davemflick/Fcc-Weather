@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Weather App</title>
+	<link href="https://fonts.googleapis.com/css?family=Chewy|Righteous" rel="stylesheet">
 	<link rel="stylesheet" href="styles/weather.css">
 </head>
 <body>
@@ -12,20 +13,27 @@
 
 		<div id="icon">
 
-			<h1>Local Weather</h1>
+			<h1 id='title'>Local Weather</h1>
 
-			<img src='' alt=''>
+			<img id='curIcon' src='' alt=''>
+			<br>
+			<button id="units" type="button" class="btn">Convert</button>
 
 		</div>
 
 		<div id="main"></div>
 
-		<br>
-		
-		<button id="units" type="button" class="btn">Convert</button>
-
 	</div>
 
+
+	<br>
+
+
+<footer>
+<hr>
+<p>Developed by Nick Burton and David Flick</p>
+<p>Weather data supplied by OpenWeatherMap, Inc.</p>
+</footer>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="scripts/weather.js"></script>
 </body>
