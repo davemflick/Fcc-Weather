@@ -9,10 +9,9 @@ $(document).ready(function() {
   // location
   function loadWeather() {
     if (units == "imperial") {
+      $('#units').text("Convert to Metric");
       tempAbbr = "F";
       speedAbbr = "MPH";
-      $('#units').text("Convert to Metric");
-
     } else {
       $('#units').text("Convert to Imperial");
       tempAbbr = "C";
@@ -48,8 +47,6 @@ $(document).ready(function() {
         dataType: 'jsonp',
         method: 'GET',
       }).done(function(data) {
-        var one = $('#1');
-        var two = $('#2');
         for (var i = 0; i < data.list.length; i += 8) {
           $main.append("<h3>" + data.list[i].dt_txt.substring(5, 10) + "</h3>");
           $main.append("Weather: " + data.list[i].weather[0].main + "<br>");
@@ -95,9 +92,7 @@ $(document).ready(function() {
         });
       });
     });
-
-  };
-
+  }
 
   loadWeather();
   $('#units').on('click', function() {
