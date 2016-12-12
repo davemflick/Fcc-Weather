@@ -11,7 +11,10 @@ $(document).ready(function() {
     if (units == "imperial") {
       tempAbbr = "F";
       speedAbbr = "MPH";
+      $('#units').text("Convert to Metric");
+
     } else {
+      $('#units').text("Convert to Imperial");
       tempAbbr = "C";
       speedAbbr = "km/h";
     }
