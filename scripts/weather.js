@@ -61,16 +61,16 @@ $(document).ready(function() {
 
         $.getJSON(url, function(data) {
           var weatherId = data.weather[0].id;
-          var imgUrl = {
-          clear:"url(http://i.imgur.com/93py8g1.jpg?2)",
-          rain:"url(http://i.imgur.com/VbPJhx7.jpg?2)",
-          thunderstorm:"url(http://i.imgur.com/eutmkWK.jpg?2)",
-          atmosphere:"url(http://i.imgur.com/gUG3cHy.jpg?1)",
-          drizzle:"url(http://i.imgur.com/6JVtdbq.jpg?1)",
-          snow:"url(http://i.imgur.com/xXVZtwU.jpg?2)",
-          clouds:"url(http://i.imgur.com/QmcfvfD.jpg?1)",
-          extreme:"url(http://i.imgur.com/4SURY5V.png?1)",
-          additional:"url(http://i.imgur.com/l7dkX2p.jpg?2)",
+           var imgUrl = {
+          clear:"url(https://www.dropbox.com/s/lb2t0b99ozc8k7r/clear.jpg?dl=1)",
+          rain:"url(https://www.dropbox.com/s/3vowgpyhyll1mk9/rain.jpg?dl=1)",
+          thunderstorm:"url(https://www.dropbox.com/s/9btpetl1lbzm5g0/thunderstorm.jpg?dl=1)",
+          atmosphere:"url(https://www.dropbox.com/s/bnk6k3qw5hep425/atmostphere.jpg?dl=1)",
+          drizzle:"url(https://www.dropbox.com/s/a524vbm37jbkwvi/drizzle.JPG?dl=1)",
+          snow:"url(https://www.dropbox.com/s/3ugtxs9rpk49cqq/snow.jpg?dl=1)",
+          clouds:"url(https://www.dropbox.com/s/3wl3mlfbv6oxtty/clouds.jpg?dl=1)",
+          extreme:"url(https://www.dropbox.com/s/fwtkd34h9blhvh4/extreme.png?dl=1)",
+          additional:"url(https://www.dropbox.com/s/e9o2eicr0dz554i/additional.jpg?dl=1)",
           }
           var backgroundImg = "";
           function selectImg(weatherId){
