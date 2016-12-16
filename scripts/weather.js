@@ -33,6 +33,7 @@ $(document).ready(function() {
        dataType: 'json',
        method: 'GET',
      }).done(function(data) {
+      console.log(data);
        $main.append("<h3>Today</h3>");
        $main.append("Weather: " + data.weather[0].main + "<br>");
        $main.append("Temp: " + data.main.temp.toFixed(1) + "&deg; " + tempAbbr + "<br>");
@@ -61,15 +62,15 @@ $(document).ready(function() {
         $.getJSON(url, function(data) {
           var weatherId = data.weather[0].id;
           var imgUrl = {
-          clear:"url(http://i.imgur.com/93py8g1.jpg)",
-          rain:"url(http://i.imgur.com/VbPJhx7.jpg)",
-          thunderstorm:"url(http://i.imgur.com/eutmkWK.jpg?1)",
-          atmosphere:"url(http://i.imgur.com/gUG3cHy.jpg)",
-          drizzle:"url(http://i.imgur.com/6JVtdbq.jpg)",
-          snow:"url(http://i.imgur.com/xXVZtwU.jpg)",
-          clouds:"url(http://i.imgur.com/QmcfvfD.jpg)",
-          extreme:"url(http://i.imgur.com/4SURY5V.png)",
-          additional:"url(http://i.imgur.com/l7dkX2p.jpg?1)",
+          clear:"url(http://i.imgur.com/93py8g1.jpg?2)",
+          rain:"url(http://i.imgur.com/VbPJhx7.jpg?2)",
+          thunderstorm:"url(http://i.imgur.com/eutmkWK.jpg?2)",
+          atmosphere:"url(http://i.imgur.com/gUG3cHy.jpg?1)",
+          drizzle:"url(http://i.imgur.com/6JVtdbq.jpg?1)",
+          snow:"url(http://i.imgur.com/xXVZtwU.jpg?2)",
+          clouds:"url(http://i.imgur.com/QmcfvfD.jpg?1)",
+          extreme:"url(http://i.imgur.com/4SURY5V.png?1)",
+          additional:"url(http://i.imgur.com/l7dkX2p.jpg?2)",
           }
           var backgroundImg = "";
           function selectImg(weatherId){
